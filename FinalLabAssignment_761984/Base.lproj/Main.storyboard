@@ -102,7 +102,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="uZe-zn-dVi">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="ScS-Dg-RpN">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -126,6 +126,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="mFm-GT-pEL"/>
+                    <connections>
+                        <outlet property="searchBar" destination="1lm-OV-JQ1" id="mdf-eY-BWb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6gO-rl-Wor" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

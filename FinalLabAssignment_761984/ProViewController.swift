@@ -11,12 +11,25 @@ import CoreData
 
 class ProViewController: UIViewController {
 
+    
+    
     @IBOutlet weak var nameLbl: UITextField!
     @IBOutlet weak var idLbl: UITextField!
     @IBOutlet weak var descriptionLbl: UITextField!
     @IBOutlet weak var priceLbl: UITextField!
     
     
+    
+    
+    var txtStr1: String?
+     var txtStr2: String?
+     var txtStr3: String?
+     var txtStr4: String?
+    
+    
+    
+    weak var task: ProTableViewController?
+       
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCoreData()

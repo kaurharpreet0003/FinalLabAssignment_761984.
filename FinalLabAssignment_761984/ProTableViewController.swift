@@ -11,8 +11,13 @@ import CoreData
 
 class ProTableViewController: UITableViewController {
     var product_array: [Product]?
+    var filter: [Product]?
     
-
+    var currentIndex = -1
+    
+    
+    @IBOutlet var searchBar: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCoreData()
@@ -22,6 +27,8 @@ class ProTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        searchBar.delegate = self
+        filter = product_array
     }
 
     // MARK: - Table view data source
@@ -268,5 +275,18 @@ class ProTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+   
 
+}
+
+extension ProTableViewController: UISearchBarDelegate{
+
+func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    
+    filter = searchText.isEmpty ? product_array : product_array?.filter({ (item: Product) -> Bool in
+        return item.P_name.range(of: searchText, options: .caseInsensitive) != nil
+    })
+    
+    tableView.reloadData()
+  }
 }
